@@ -4,7 +4,7 @@ export default async function getAllUsers() {
 
 const userData = fetch("https://jsonplaceholder.typicode.com/users");
 const users = await userData;
-if(!users){
+if(!users.ok){
  throw new Error("api not found");
 }
 return users.json();
